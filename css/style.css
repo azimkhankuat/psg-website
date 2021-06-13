@@ -1,0 +1,334 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #f1f1f1;
+    font-family: 'Roboto Slab', serif;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-areas:
+            'logo quote quote quote quote'
+            'logo topnav topnav topnav topnav';
+    text-align: center;
+    background: #181733;
+    height: auto;
+}
+
+.logo{
+    grid-area: logo;
+    text-align: center;
+}
+
+.quote{
+    grid-area: quote;
+    color: #9d9da9;
+    font-size: 24px;
+    font-family: 'Bree Serif', serif;
+}
+
+.logo{
+    grid-area: logo;
+}
+
+.topnav {
+    grid-area: topnav;
+    overflow: hidden;
+    background-color: #181733;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #005596;
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+        transition: all 0.5s;
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+        transition: all 0.5s;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        height: 25px;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        height: 25px;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* Columns */
+/* Left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+    height: 2000px;
+    overflow: auto;
+}
+
+/* Right column */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .leftcolumn, .rightcolumn{
+        width: 100%;
+    }
+
+    .rightcolumn{
+        padding-left: 0px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .leftcolumn{
+        width: 68%;
+    }
+
+    .rightcolumn{
+        width: 32%;
+    }
+}
+/* Card */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+/* Floats */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    display: grid;
+    grid-template-areas:
+        'text text text text img'
+        'text text text text img'
+        'text text text text img';
+    padding: 20px;
+    background: #181733;
+}
+
+.footertext{
+    grid-area: text;
+    text-align: center;
+    color: white;
+}
+
+.footerimg{
+    grid-area: img;
+    text-align: center;
+}
+
+/* History page*/
+.left-history{
+    float: left;
+    width: 60%;
+}
+
+.right-history{
+    float: left;
+    width: 40%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .left-history, .right-history{
+        width: 100%;
+    }
+    .right-history{
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .left-history{
+        width: 55%;
+    }
+
+    .right-history{
+        width: 45%;
+    }
+}
+
+.showbutton {
+    background-color: #ef3a40;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 4px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+}
+
+.showbutton:hover {
+    opacity: 1;
+}
+
+button:active {
+    opacity: 1;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+@media screen and (max-width: 600px) {
+    .showbutton{
+        padding: 2px;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .showbutton{
+        padding: 3px;
+        margin: 2px;
+    }
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table td,.table th{
+    border:1px solid #ddd;
+    text-align: center;
+    font-size:14px;
+}
+
+.table th{
+    background-color: #ef3a40;
+    color:#ffffff;
+}
+
+@media(max-width: 600px){
+    .table thead{
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td{
+        display: block;
+        width: 100%;
+    }
+    .table tr{
+        margin-bottom:15px;
+    }
+    .table td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left:0;
+        width: 50%;
+        padding-left:15px;
+        font-size:15px;
+        font-weight: bold;
+        text-align: left;
+    }
+}
+
+/* Players page */
+.players {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #f1f1f1;
+    padding: 15px;
+}
+
+.players-item {
+    background-color: #151e2d;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #aaaaaa;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #d51e30;
+}
+
